@@ -16,6 +16,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool displaySplashImage = true;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +36,17 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePageWidget(),
+      home: displaySplashImage
+          ? Container(
+              color: Colors.transparent,
+              child: Builder(
+                builder: (context) => Image.asset(
+                  'assets/images/1572850988_tmpphpkz5USs.jpeg',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            )
+          : HomePageWidget(),
     );
   }
 }
