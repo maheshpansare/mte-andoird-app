@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               child: Builder(
                 builder: (context) => Image.asset(
                   'assets/images/1572850988_tmpphpkz5USs.jpeg',
-                  fit: BoxFit.contain,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
             )
