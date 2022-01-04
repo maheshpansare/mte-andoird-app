@@ -1,4 +1,4 @@
-# mahesh_tech_enterprises
+# Mahesh Tech Enterprises
 
 A new Flutter project.
 
